@@ -17,19 +17,7 @@
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",
-    "serve-favicon": "~2.3.0"
-  },
-  "description": "<<<<<<< HEAD Michelle - Today's true daily double is.... ======= this is a read me",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lkiziak/jeopardy-friends.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lkiziak/jeopardy-friends/issues"
-  },
-  "homepage": "https://github.com/lkiziak/jeopardy-friends#readme",
-  "devDependencies": {}
+    "serve-favicon": "~2.3.0",
+    "socket.io": "^1.5.1"
+  }
 }
