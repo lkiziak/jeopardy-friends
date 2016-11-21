@@ -21,6 +21,11 @@ function apiDetails(req, res, next){
   });
 };
 
+function welcome(req, res, next) {
+      res.render('homepage', { user: req.user });
+}
+
 module.exports = {
-  apiDetails: apiDetails
+  apiDetails: apiDetails,
+  welcome: welcome
 }
