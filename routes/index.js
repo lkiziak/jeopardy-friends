@@ -2,9 +2,15 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport')
 
+var pagesController = require('../controllers/pages');
+
+router.get('/api/random', pagesController.apiDetails)
+router.get('/', pagesController.welcome)
+router.get('/welcome', pagesController.welcome)
+
 // The root route renders our only view
-router.get('/', function(req, res,next) {
-  res.render('index', { title: 'Jeopardy with Friends - Live!', user: req.user});
+router.get('/index', function(req, res,next) {
+  res.render('index', { title: 'Jeopardy with Friends - Live!', user: req.user });
 
 });
 
@@ -18,8 +24,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/',
-    failureRedirect : '/'
+    successRedirect : '/index',
+    failureRedirect : '/welcome'
   }
 ));
 
