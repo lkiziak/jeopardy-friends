@@ -2,14 +2,10 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Jeopardy with Friends - Live!' });
-});
-
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.render('index', {user: req.user});
+  res.render('index', { title: 'Jeopardy with Friends - Live!', user: req.user});
+
 });
 
 // Google OAuth login route
