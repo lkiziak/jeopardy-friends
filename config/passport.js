@@ -1,6 +1,6 @@
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-//var User = require('../models/user');
+var User = require('../models/user');
 
 //most likely for our project
 //var User = require('./models/userUser');
@@ -9,7 +9,7 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET,
-//    callbackURL: process.env.GOOGLE_CALLBACK
+   callbackURL: process.env.GOOGLE_CALLBACK
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOne({ 'googleId': profile.id }, function(err, user) {
