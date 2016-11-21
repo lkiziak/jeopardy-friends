@@ -12,16 +12,23 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-    
-<!-- new html below -->
-<ul class="right">
-  <% if (user) { %>
-  <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
-  <% } else { %>
-  <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
-  <% } %>
-</ul>
+    <!-- Socket IO chat -->
+      <!-- messages view -->
+    <ul id="messages"></ul><hr>
+    <!-- message input  -->
+    <label>Your Name:</label><input id="user-name"><br><br>
+    <label>Message:</label><textarea id="new-msg"></textarea><br><br>
+     <input type="button" id="btn-send-msg" value=" Send Message ">
+    <!-- Socket IO chat -->
 
+    <ul class="right">
+      <% if (user) { %>
+      <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+      <% } else { %>
+      <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+      <% } %>
+
+    </ul>
 
 <!--   Jquery-->
      <script
@@ -35,5 +42,8 @@
       <!-- JavaScript for Materialize -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
      <script src="javascripts/app.js"></script>
+     <!-- IO  -->
+     <script src="/socket.io/socket.io.js"></script>
+
   </body>
 </html>
