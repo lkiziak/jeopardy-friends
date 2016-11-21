@@ -13,76 +13,51 @@
 
 
 <!-- Nav bar -->
-    <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Jeopardy with Friends - Live!</a>
+        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>
       </div>
     </nav>
-  </div>
-
-
-<!--Chat div-->
-    <div id="chat"></div>
-            <div id="chat-messages"></div>
-            <!-- this line of code or the one below:   <textarea placeholder="Type your message"></textarea> -->
-            <input type="text" id="message">
-            <input type="button" value="send" onclick="sendMessage();">
-    </div>
-
-
-<!-- SOCKET.io Script       <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> -->
 
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
-<<<<<<< HEAD
+
     <!-- Socket IO chat -->
       <!-- messages view -->
-    <ul id="messages"></ul><hr>
+    <ul id="messages"></ul>
+   <div class="divider"></div>
     <!-- message input  -->
-    <label>Your Name:</label><input id="user-name"><br><br>
-    <label>Message:</label><textarea id="new-msg"></textarea><br><br>
-     <input type="button" id="btn-send-msg" value=" Send Message ">
-    <!-- Socket IO chat -->
-=======
->>>>>>> f3b98ec18ce9a6f718a5e2b1eda3a74cf50dd539
-
+    <div class="row">
+       <%= user.googleId %>
+        <label>Your Name:</label><input id="user-name"><br><br>
+        <label>Message:</label><textarea id="new-msg"></textarea><br><br>
+         
+         <input type="button" id="btn-send-msg" value="Send Message" onclick="sendMessage()">
+        
+    </div>
+    <!-- Socket IO chat end-->
+    
+<!--    login/logout-->
     <ul class="right">
       <% if (user) { %>
       <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
       <% } else { %>
       <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
       <% } %>
-<<<<<<< HEAD
-=======
-
-    </ul>%
-   </ul>
-
-    <!-- jQuery (required by Materialize) -->
-     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-
-<!-- new html below -->
-<ul class="right">
-  <% if (user) { %>
-  <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
-  <% } else { %>
-  <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
-  <% } %>
-</ul>
-
->>>>>>> f3b98ec18ce9a6f718a5e2b1eda3a74cf50dd539
-
     </ul>
+    
+
+
 
 <!--   Jquery-->
      <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+     
+      <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> 
 
      <!-- Using Underscore for collection manipulation and client-side templatin -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
