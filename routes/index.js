@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport')
 
 // The root route renders our only view
-router.get('/', function(req, res) {
+router.get('/', function(req, res,next) {
   res.render('index', { title: 'Jeopardy with Friends - Live!', user: req.user});
 
 });
