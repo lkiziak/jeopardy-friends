@@ -11,6 +11,7 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+<<<<<<< HEAD
     <!-- Socket IO chat -->
       <!-- messages view -->
     <ul id="messages"></ul><hr>
@@ -18,19 +19,48 @@
     <label>Your Name:</label><input id="user-name"><br><br>
     <label>Message:</label><textarea id="new-msg"></textarea><br><br>
     <!-- Socket IO chat -->
+=======
+<<<<<<< HEAD
+    
+>>>>>>> cdaf916bffc44da3ce8d7f3411f0c6afcfd7283d
     <ul class="right">
       <% if (user) { %>
       <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
       <% } else { %>
       <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
       <% } %>
+<<<<<<< HEAD
     </ul>%
 
+=======
+    </ul>
+    
+>>>>>>> cdaf916bffc44da3ce8d7f3411f0c6afcfd7283d
     <!-- jQuery (required by Materialize) -->
      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+=======
+
+<!-- new html below -->
+<ul class="right">
+  <% if (user) { %>
+  <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+  <% } else { %>
+  <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+  <% } %>
+</ul>
+
+
+
+     <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+>>>>>>> Benny-Profane-practice-branch
      <!-- Using Underscore for collection manipulation and client-side templatin -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-     <!-- JavaScript for Materialize -->
+
+      <!-- JavaScript for Materialize -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
      <script src="javascripts/app.js"></script>
      <!-- IO  -->
