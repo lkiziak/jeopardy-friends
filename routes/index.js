@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport')
 
+var pagesController = require('../controllers/pages');
+
+router.get('/api/random', pagesController.apiDetails)
+
 // The root route renders our only view
 router.get('/', function(req, res,next) {
   res.render('index', { title: 'Jeopardy with Friends - Live!', user: req.user});
