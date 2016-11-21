@@ -16,8 +16,15 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <% if (user) { %>
+            <li id="user-email" class='push'><%= user.email %></li>
+            <% } %>
+         </ul>
+        
       </div>
     </nav>
+    
 
 
     <h1><%= title %></h1>
@@ -30,11 +37,11 @@
    <div class="divider"></div>
     <!-- message input  -->
     <div class="row">
-       <%= user.googleId %>
-        <label>Your Name:</label><input id="user-name"><br><br>
+
+
         <label>Message:</label><textarea id="new-msg"></textarea><br><br>
          
-         <input type="button" id="btn-send-msg" value="Send Message" onclick="sendMessage()">
+         <input type="button" id="btn-send-msg" value="Send Message">
         
     </div>
     <!-- Socket IO chat end-->
