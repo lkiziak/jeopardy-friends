@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var messages = document.getElementById('messages');
   var newMsg = document.getElementById('new-msg');
   var userName = document.getElementById('user-name');
+  var userEmail = document.getElementById('user-email').innerHTML;
 
   var socket = io();
   socket.on('add-message', function (data) {
@@ -10,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('btn-send-msg').addEventListener('click', function() {
     socket.emit('add-message', {
-      name: userName.value,
+      name: userEmail,
       msg: newMsg.value
     });
     newMsg.value = '';
   });
 
   function addMessage(data) {
-    messages.innerHTML += ['<li><strong>', data.name, ':</strong> ', data.msg + '</li>'].join('');
+    messages.innerHTML += ['<li><span class="userEmail">', data.name, '</span>: ', data.msg + '</li>'].join('');    
   }
 
 });

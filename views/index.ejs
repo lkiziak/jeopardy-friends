@@ -13,13 +13,19 @@
 
 
 <!-- Nav bar -->
-    <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Jeopardy with Friends - Live!</a>
+        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <% if (user) { %>
+            <li id="user-email" class='push'><%= user.email %></li>
+            <% } %>
+         </ul>
+
       </div>
     </nav>
-  </div>
+
+
 
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
@@ -28,13 +34,19 @@
     <!-- Socket IO chat -->
       <!-- messages view -->
     <ul id="messages"></ul>
-    <hr>
+   <div class="divider"></div>
     <!-- message input  -->
-    <label>Your Name:</label><input id="user-name"><br><br>
-    <label>Message:</label><textarea id="new-msg"></textarea><br><br>
-     <input type="button" id="btn-send-msg" value="Send Message" onclick="sendMessage()">
-    <!-- Socket IO chat -->
+    <div class="row">
 
+
+        <label>Message:</label><textarea id="new-msg"></textarea><br><br>
+
+         <input type="button" id="btn-send-msg" value="Send Message">
+
+    </div>
+    <!-- Socket IO chat end-->
+
+<!--    login/logout-->
     <ul class="right">
       <% if (user) { %>
       <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
@@ -42,6 +54,8 @@
       <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
       <% } %>
     </ul>
+
+
 
 
 <!--   Jquery-->
