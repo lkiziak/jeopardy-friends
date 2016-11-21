@@ -9,9 +9,35 @@
      <link rel="stylesheet" href="stylesheets/style.css"/>
   </head>
   <body>
+
+
+
+<!-- Nav bar -->
+    <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="" class="brand-logo left">Jeopardy with Friends - Live!</a>
+      </div>
+    </nav>
+  </div>
+
+
+<!--Chat div-->
+    <div id="chat"></div>
+            <div id="chat-messages"></div>
+            <!-- this line of code or the one below:   <textarea placeholder="Type your message"></textarea> -->
+            <input type="text" id="message">
+            <input type="button" value="send" onclick="sendMessage();">
+    </div>
+
+
+<!-- SOCKET.io Script       <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> -->
+
+
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+<<<<<<< HEAD
     <!-- Socket IO chat -->
       <!-- messages view -->
     <ul id="messages"></ul><hr>
@@ -20,6 +46,8 @@
     <label>Message:</label><textarea id="new-msg"></textarea><br><br>
      <input type="button" id="btn-send-msg" value=" Send Message ">
     <!-- Socket IO chat -->
+=======
+>>>>>>> f3b98ec18ce9a6f718a5e2b1eda3a74cf50dd539
 
     <ul class="right">
       <% if (user) { %>
@@ -27,6 +55,26 @@
       <% } else { %>
       <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
       <% } %>
+<<<<<<< HEAD
+=======
+
+    </ul>%
+   </ul>
+
+    <!-- jQuery (required by Materialize) -->
+     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+
+<!-- new html below -->
+<ul class="right">
+  <% if (user) { %>
+  <li><a href="/logout"><i class="material-icons left">trending_flat</i>Logout</a></li>
+  <% } else { %>
+  <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+  <% } %>
+</ul>
+
+>>>>>>> f3b98ec18ce9a6f718a5e2b1eda3a74cf50dd539
 
     </ul>
 
