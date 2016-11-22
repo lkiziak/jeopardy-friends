@@ -13,8 +13,8 @@
 
 
 <!-- Nav bar -->
-    
-   
+
+
       <div class="indigo darken-4 col s6 offset-s6">
 <!--        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>-->
         <ul class="right login-index">
@@ -23,10 +23,11 @@
             <li id="user-email" class='push'><%= user.email %></li>
             <% } %>
          </ul>
+
       </div>
 
-   
-   
+
+
    <div id="question"></div>
     <!-- Socket IO chat -->
       <!-- messages view -->
@@ -35,27 +36,26 @@
             <div class="chatroom">
                 <ul id="messages"></ul>
             </div>
-           
+
             <!-- message input  -->
-        
+
 
                 <label>Message:</label><textarea id="new-msg"></textarea><br><br>
 
                  <input type="button" id="btn-send-msg" value="Send Message" class="indigo darken-4">
 
-        
         </div>
-        
+
     </div>
     <!-- Socket IO chat end-->
-    
+
 <!--   Jquery-->
      <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-     
-      <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script> 
+
+      <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
 
      <!-- Using Underscore for collection manipulation and client-side templatin -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
