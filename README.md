@@ -1,9 +1,59 @@
+#Jeopardy with Friends - LIVE!
 
-Jeopardy With Friends-Live!
 
-this is a read me
 
-JAMESJAMESJAMESJAMESJAMESJAMES
 
-blair made this change
+
+ 
+##Motivation
+
+
+
+
+### (Heroku link) 
+
+```
+
+
+```
+
+###Technologies used
+* HTML
+* CSS
+* Heroku hosting
+* MongoDB
+* OAth
+* Javascript
+* Google API
+* Express & Node
+* GitHub
+
+##Deployment 
+
+ 
+
+##Design
+
+
+
+##Planning Process
+
+
+### (Trello Link)
+
+
+```
+
+
+```
+
+
+
+###Unresolved Issues
+
+
+
+
+
+
 
