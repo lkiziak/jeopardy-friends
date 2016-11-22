@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var socket = io();
   socket.on('add-message', function (data) {
     addMessage(data);
+      
   });
 
   document.getElementById('btn-send-msg').addEventListener('click', function() {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <hr>
           <small>${obj.answer}</small>
           `;
+
 }
 
 
@@ -41,7 +43,9 @@ function generateQuestion(){
   $('#question').prepend(makeQuestion(data.info));
   }, function(err) {console.error(err);})
 }
+
 setInterval(generateQuestion, 9000);
+
 
 
 
