@@ -18,14 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     newMsg.value = '';
   });
 
-<<<<<<< Updated upstream
 
 function addMessage(data) {
-=======
-function addMessage(data) {
-      
-    messages.innerHTML += ['<li class="chat-message"><span class="userEmail">', data.name, '</span>: <span class="msg-content">', data.msg, '</span></li>'].join('');    
->>>>>>> Stashed changes
 
     messages.innerHTML += ['<li class="chat-message"><span class="userEmail">', data.name, '</span>: <span class="msg-content">', data.msg, '</span></li>'].join('');    
   }
