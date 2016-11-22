@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 function makeQuestion(obj) {
    return `
           <p>${obj.question}</p>
-          <small id='answer'>${obj.answer}</small>
           `;
 }
 
