@@ -33,8 +33,34 @@ a {
     background-color: #151b59;
 }
 
+#category, #question {
+    text-align: center;
+}
+
+.chatroom, #question {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#category {
+    font-family: 'Maitree', serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    padding: 3px;
+}
+
+#question {
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+.chatroom, textarea {
+    font-size: 1.25em;
+    letter-spacing: 1px;
+}
+
 .chatroom {
     height: 20vh;
+
 }
 
 .msg-content {
@@ -65,3 +91,22 @@ a {
     text-align: right;
 }
 
+
+.material-icons {
+    padding-right: 10px;
+}
+
+.cropped-trebek-img {
+    display: none;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 992px) {
+    .cropped-trebek-img {
+        display: initial;
+    }
+    .chat-trebek-img {
+        background-image: url();
+    }
+}

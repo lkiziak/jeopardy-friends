@@ -27,25 +27,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-  function makeQuestion(obj) {
-   return `<h1>${obj.category}</h1>
+function makeQuestion(obj) {
+   return `
           <p>${obj.question}</p>
-          <hr>
-          <small>${obj.answer}</small>
           `;
+}
 
+function makeCategory(obj) {
+    return `<p>${obj.category}</p>`
 }
 
 
 function generateQuestion(){
   $.get('/api/random').then(function(data) {
   $('#question').html("")
+  $('#category').html("")
   $('#question').prepend(makeQuestion(data.info));
+  $('#category').prepend(makeCategory(data.info));
   }, function(err) {console.error(err);})
 }
 
-setInterval(generateQuestion, 9000);
-
+//setInterval(generateQuestion, 9000);
+generateQuestion()
 
 
 

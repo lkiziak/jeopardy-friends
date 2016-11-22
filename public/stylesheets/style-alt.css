@@ -15,7 +15,9 @@ body {
 }
 .login-pointer-text{
   font-family: 'Open Sans Condensed', sans-serif;
-
+  width: 400px;
 }
-
+button{
+  margin-bottom: 50px;
+}
 

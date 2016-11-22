@@ -6,6 +6,7 @@
      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Materialize CSS Framework -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Maitree:500|Open+Sans+Condensed:300,700" rel="stylesheet">
      <link rel="stylesheet" href="stylesheets/style.css"/>
   </head>
   <body class="chat-trebek-img">
@@ -15,7 +16,9 @@
 
 
 <div class="row">
-            
+    <div class="cropped-trebek-img">
+        <img src="../images/jeopardy-cropped1.jpg" alt="jeopardy logo" class='responsive-img'>
+    </div>        
 <!--  user info -->
     <div class="col s12">
         <ul class="login-index">
@@ -51,7 +54,7 @@
  
 >>>>>>> fae572d9d9a1fc9edcbe09db678af4382325c242
 
-
+    <% if (user) { %>
     <div class="col m12 l6 offset-l6">
 
 <!--   category goes here-->
@@ -59,7 +62,6 @@
       
 <!--    question goes here-->
        <div id="question"></div>
-      
       
     <!-- Socket IO chat -->
       <!-- messages view -->
@@ -117,8 +119,27 @@
 
     </div>
     <!-- Socket IO chat end-->
+    
+<!--    show login if user not logged in-->
+    <% } else { %>
+    <div class="row">
+        <div class="col m12 l6 offset-l6">
+               <div class="card-panel indigo darken-4 center-align">
+                   <p>
+                        <a href="/auth/google"><i class="material-icons">vpn_key</i>Login with Google to Play!</a>
+                    </p>  
 
+               </div>
+                
+        </div>
+    </div>
+
+<<<<<<< HEAD
 >>>>>>> 9c06f9b76440a48664080083e2ac8b690a1818d7
+=======
+        <% } %>
+    
+>>>>>>> 12436f46c0680eeef044d0e7a9190c6d747bc022
 <!--   Jquery-->
      <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
