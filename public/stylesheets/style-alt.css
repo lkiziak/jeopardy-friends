@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #f2ea66;
+    background-color: #151b59;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-image: url(../images/trebek-2_720.jpg)
+}
+.login-box{
+  height: 50px;
+  width: 190px;
+  background-color: #f2ea66;
+  border-radius: 10px;
+}
+.login-pointer-text{
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+
