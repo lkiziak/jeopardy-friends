@@ -5,7 +5,13 @@ body {
     background-color: #151b59;
     background-repeat: no-repeat;
     height: 100vh;
-    background-image: url(../images/trebek-2_720.jpg)
+
+}
+.login{
+  background-image: url(../images/trebek-2_720.jpg)
+}
+.logout{
+  background-image: url(../images/login.jpg)
 }
 .login-box{
   height: 50px;
@@ -19,5 +25,12 @@ body {
 }
 button{
   margin-bottom: 50px;
+}
+/*MEDIA QUERIES*/
+
+@media (max-width: 992px) {
+    body{
+        background-image: url();
+    }
 }
 
