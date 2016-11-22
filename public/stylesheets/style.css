@@ -1,7 +1,15 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: mediumpurple;
+  color: #f2ea66;
+    background-color: #151b59;
+    background-repeat: no-repeat;
+}
+
+.chat-trebek-img {
+    height: 100vh;
+/*    width: 50vh;*/
+    background-image: url(../images/trebek_homepage.jpg)
 }
 
 a {
@@ -10,4 +18,31 @@ a {
 
 .userEmail {
     font-weight: 700;
+}
+
+.chat-message {
+    margin-bottom: 5px;
+}
+
+.chatroom {
+    border: #f2ea66 solid 1px;
+    border-radius: 10px;
+    height: 65vh;
+    padding: 10px;
+}
+
+.msg-content {
+    color: #f5f0a3
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: #f2ea66;
+}
+
+.login-index {
+    margin-top: -15px;
 }
