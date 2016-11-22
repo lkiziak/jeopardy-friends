@@ -27,20 +27,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-  function makeQuestion(obj) {
-   return `<h1>${obj.category}</h1>
+function makeQuestion(obj) {
+   return `
           <p>${obj.question}</p>
+<<<<<<< HEAD
           <hr>
           <small id='answer'>${obj.answer}</small>
+=======
+>>>>>>> master
           `;
+}
 
+function makeCategory(obj) {
+    return `<p>${obj.category}</p>`
 }
 var answer
 
 function generateQuestion(){
   $.get('/api/random').then(function(data) {
   $('#question').html("")
+  $('#category').html("")
   $('#question').prepend(makeQuestion(data.info));
+<<<<<<< HEAD
   answer = data.info.answer
   console.log(answer)
   }, function(err) {console.error(err);})
@@ -54,6 +62,14 @@ function checkAnswer(){
     console.log(answer)
     var msg = $('.msg-content')
     var name = $('.username')
+=======
+  $('#category').prepend(makeCategory(data.info));
+  }, function(err) {console.error(err);})
+}
+
+//setInterval(generateQuestion, 9000);
+generateQuestion()
+>>>>>>> master
 
   for (var i = 0; i < msg.length; i++){
     // Specify which user's msg matches the answer first
