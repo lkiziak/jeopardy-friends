@@ -18,7 +18,29 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function addMessage(data) {
-    messages.innerHTML += ['<li><span class="userEmail">', data.name, '</span>: ', data.msg + '</li>'].join('');    
+    messages.innerHTML += ['<li><span class="userEmail">', data.name, '</span>: ', data.msg + '</li>'].join('');
   }
 
+
 });
+
+  function makeQuestion(obj) {
+   return `<h1>${obj.category}</h1>
+          <p>${obj.question}</p>
+          <hr>
+          <small>${obj.answer}</small>
+          `;
+}
+
+
+function generateQuestion(){
+  $.get('/api/random').then(function(data) {
+  $('#question').html("")
+  $('#question').prepend(makeQuestion(data.info));
+  }, function(err) {console.error(err);})
+}
+setInterval(generateQuestion, 9000);
+
+
+
+
