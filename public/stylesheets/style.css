@@ -24,11 +24,17 @@ a {
     margin-bottom: 5px;
 }
 
-.chatroom {
+.chatroom, #category, #question, #btn-send-msg, #new-msg {
     border: #f2ea66 solid 1px;
     border-radius: 10px;
-    height: 65vh;
     padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #151b59;
+}
+
+.chatroom {
+    height: 20vh;
 }
 
 .msg-content {
@@ -43,6 +49,28 @@ a {
     color: #f2ea66;
 }
 
+/*
 .login-index {
     margin-top: -15px;
 }
+*/
+
+
+.user-info {
+    border: #f2ea66 solid 1px;
+    background-color: rgba(250, 235, 215, 0.45);
+}
+
+.login-index {
+    text-align: right;
+}
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+		</div>
+		<div class="col-sm-4">
+		</div>
+	</div>
+</div>
