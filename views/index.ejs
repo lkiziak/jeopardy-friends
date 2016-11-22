@@ -12,37 +12,48 @@
 
 
 
-<!-- Nav bar -->
 
 
-      <div class="indigo darken-4 col s6 offset-s6">
-<!--        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>-->
-        <ul class="right login-index">
+<div class="row">
+            
+<!--  user info -->
+    <div class="col s12">
+        <ul class="login-index">
               <% if (user) { %>
-            <li class='push'><a href="/logout" class='logout'><i class="material-icons right">trending_flat</i>Logout</a></li>
-            <li id="user-email" class='push'><%= user.email %></li>
+            <li><a href="/logout" class='logout'>Logout<i class="material-icons right">trending_flat</i></a></li>
+            <li id="user-email"><%= user.email %></li>
             <% } %>
          </ul>
+        
+    </div>
 
-      </div>
+ 
 
 
+    <div class="col m12 l6 offset-l6">
 
-   <div id="question"></div>
+<!--   category goes here-->
+        <div id="category"></div>
+      
+<!--    question goes here-->
+       <div id="question"></div>
+      
+      
     <!-- Socket IO chat -->
       <!-- messages view -->
-    <div class="row">
-        <div class="col s5 offset-s7">
             <div class="chatroom">
                 <ul id="messages"></ul>
             </div>
 
             <!-- message input  -->
 
-
-                <label>Message:</label><textarea id="new-msg"></textarea><br><br>
-
-                 <input type="button" id="btn-send-msg" value="Send Message" class="indigo darken-4">
+        <div class="input-field">
+            
+            <label for='new-msg'>Message:</label>
+            <textarea id="new-msg"></textarea>
+            
+            <input type="button" id="btn-send-msg" value="Send Message" class="indigo darken-4 right">
+        </div>
 
         </div>
 
