@@ -8,21 +8,24 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
      <link rel="stylesheet" href="stylesheets/style.css"/>
   </head>
-  <body>
+  <body class="chat-trebek-img">
 
 
 
 <!-- Nav bar -->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+    
+   
+      <div class="indigo darken-4 col s6 offset-s6">
+<!--        <a href="#" class="brand-logo left">Jeopardy with Friends - Live!</a>-->
+        <ul class="right login-index">
               <% if (user) { %>
+            <li class='push'><a href="/logout" class='logout'><i class="material-icons right">trending_flat</i>Logout</a></li>
             <li id="user-email" class='push'><%= user.email %></li>
             <% } %>
          </ul>
 
       </div>
+<<<<<<< HEAD
     </nav>
 
 
@@ -30,19 +33,34 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+=======
+>>>>>>> 936e081c254e3b9f91d1b9d410cef5e4a9f2f41b
 
     <!-- Socket IO chat -->
       <!-- messages view -->
-    <ul id="messages"></ul>
-   <div class="divider"></div>
-    <!-- message input  -->
     <div class="row">
+        <div class="col s5 offset-s7">
+            <div class="chatroom">
+                <ul id="messages"></ul>
+            </div>
+           
+            <!-- message input  -->
+        
 
+                <label>Message:</label><textarea id="new-msg"></textarea><br><br>
 
+<<<<<<< HEAD
         <label>Message:</label><textarea id="new-msg"></textarea><br><br>
 
          <input type="button" id="btn-send-msg" value="Send Message">
 
+=======
+                 <input type="button" id="btn-send-msg" value="Send Message" class="indigo darken-4">
+
+        
+        </div>
+        
+>>>>>>> 936e081c254e3b9f91d1b9d410cef5e4a9f2f41b
     </div>
     <!-- Socket IO chat end-->
 <<<<<<< HEAD
