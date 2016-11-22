@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function addMessage(data) {
-    messages.innerHTML += ['<li><span class="userEmail">', data.name, '</span>: ', data.msg + '</li>'].join('');    
+    messages.innerHTML += ['<li class="chat-message"><span class="userEmail">', data.name, '</span>: <span class="msg-content">', data.msg, '</span></li>'].join('');    
   }
 
 });
