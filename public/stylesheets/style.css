@@ -33,8 +33,20 @@ a {
     background-color: #151b59;
 }
 
+#category, #question {
+    text-align: center;
+}
+
+.chatroom, #question {
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
 .chatroom {
     height: 20vh;
+    font-family: 'Maitree', serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 .msg-content {
@@ -65,3 +77,7 @@ a {
     text-align: right;
 }
 
+
+.material-icons {
+    padding-right: 10px;
+}
