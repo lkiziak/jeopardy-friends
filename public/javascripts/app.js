@@ -30,11 +30,6 @@ document.addEventListener("DOMContentLoaded", function() {
 function makeQuestion(obj) {
    return `
           <p>${obj.question}</p>
-<<<<<<< HEAD
-          <hr>
-          <small id='answer'>${obj.answer}</small>
-=======
->>>>>>> master
           `;
 }
 
@@ -48,13 +43,12 @@ function generateQuestion(){
   $('#question').html("")
   $('#category').html("")
   $('#question').prepend(makeQuestion(data.info));
-<<<<<<< HEAD
   answer = data.info.answer
   console.log(answer)
   }, function(err) {console.error(err);})
 }
 
-setInterval(generateQuestion, 9000);
+//setInterval(generateQuestion, 9000);
 
 //When submit button is pushed trigger checkAnswer()
 
@@ -62,14 +56,14 @@ function checkAnswer(){
     console.log(answer)
     var msg = $('.msg-content')
     var name = $('.username')
-=======
+
   $('#category').prepend(makeCategory(data.info));
   }, function(err) {console.error(err);})
 }
 
 //setInterval(generateQuestion, 9000);
 generateQuestion()
->>>>>>> master
+
 
   for (var i = 0; i < msg.length; i++){
     // Specify which user's msg matches the answer first
