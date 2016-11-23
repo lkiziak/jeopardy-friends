@@ -1,59 +1,111 @@
 document.addEventListener("DOMContentLoaded", function() {
   var messages = document.getElementById('messages');
+  var $chatroom = $('.chatroom')
   var newMsg = document.getElementById('new-msg');
   var userName = document.getElementById('user-name');
   var userEmail = document.getElementById('user-email').innerHTML;
+  var $sendButton = $('#btn-send-msg')
   var answer;
+  var question
 
   var socket = io();
   socket.on('add-message', function (data) {
     addMessage(data);
+    scrollDown()
+
   });
 
-function generateQuestion(){
-  $.get('/api/random').then(function(data) {
-  $('#question').html("")
-  $('#category').html("")
-  $('#question').prepend(makeQuestion(data.info));
-  $('#category').prepend(makeCategory(data.info));
-  answer = data.info.answer
-  console.log(answer)
-  }, function(err) {console.error(err);})
+    socket.on('update-question', function(data){
+      console.log('update')
+      appendQuestion(data)
+    })
+  // socket.on('new-question', function(){
+  //   generateQuestion();
+  // }
+
+//keep chatroom scrolled to the bottom
+function scrollDown(){
+
+    $('.chatroom').animate({ scrollTop: $(document).height() }, "slow");
+
+    return false;
+
 }
 
-setInterval(generateQuestion, 15000);
+function appendQuestion(data){
+  console.log('append question: ', data)
+  $('#question').html("")
+  $('#category').html("")
+  $('#question').prepend(makeQuestion(data));
+  $('#category').prepend(makeCategory(data));
+  answer = data.answer
+  console.log(answer)
+
+}
+
+
+setInterval(generateQuestion, 10000);
 
 
 function checkAnswer(){
-    console.log('answer: ', answer)
-    var msg = $('.msg-content')
-    var name = $('.username')
-
-  for (var i = 0; i < msg.length; i++){
-    if (answer == msg[i].innerHTML) {
-       name = msg[i].previousElementSibling.innerHTML
-      console.log(name + ' WAS CORRECT!')
-    } else {
-      console.log('KEEP GUESSING')
-    }
+  var msgCheck = newMsg.value
+  var answerCheck = answer
+  console.log('msg: ', newMsg.value)
+  console.log('answer: ', answer)
+  if (msgCheck == answerCheck) {
+    console.log('YOURE THE MAN NOW DAWG')
   }
 }
 
-  document.getElementById('btn-send-msg').addEventListener('click', function() {
-    socket.emit('add-message', {
-      name: userEmail,
-      msg: newMsg.value
-    });
-      checkAnswer();
-    newMsg.value = '';
-  });
+function generateQuestion() {
+  $.get('/api/random').then(function(data) {
+    question = {
+      question: data.info.question,
+      category: data.info.category,
+      answer: data.info.answer
+    }
+    socket.emit('new-question', question)
+
+  }, function(err) {console.error(err);})
+}
+
+
+//    function to send chat to socket
+    function sendSocket(){
+        if(newMsg.value) {
+            socket.emit('add-message', {
+              name: userEmail,
+              msg: newMsg.value
+            });
+
+              checkAnswer();
+              newMsg.value = '';
+              newMsg.focus()
+        }
+    }
+
+
+  //send chat when send message is clicked
+  $sendButton.on('click', function() {
+    checkAnswer();
+    sendSocket();
+})
+
+  //send message with enter key
+  newMsg.addEventListener('keyup', function (event){
+      if(event.which == 13) {
+          checkAnswer();
+          sendSocket();
+      }
+  })
+
 
   function addMessage(data) {
-
-    messages.innerHTML += ['<li class="chat-message"><span class="userEmail">', data.name, '</span>: <span class="msg-content">', data.msg, '</span></li>'].join('');
-
+    var div = document.createElement('div')
+    div.className = 'chat-message'
+    div.innerHTML = `<span class="userEmail"> ${data.name} </span>: <span class="msg-content"> ${data.msg} </span>`
+    $chatroom.append(div)
   }
-
 
 });
 
@@ -66,4 +118,3 @@ function makeQuestion(obj) {
 function makeCategory(obj) {
     return `<p>${obj.category}</p>`
 }
-
